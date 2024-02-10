@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Print Array Elements with Delay</title>
+  <style>
+    #output {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+    <h3>Print Array in 3 delay</h3>
+  <div id="output"></div>
+
+  <script>
+    const array = [1, 2, 3, 4, 5];
+
+    function printWithDelay() {
+      array.forEach((element, index) => {
+        setTimeout(() => {
+          // Create a new paragraph element
+          const paragraph = document.createElement('p');
+          // Set the text content of the paragraph to the current array element
+          paragraph.textContent = element;
+          // Append the paragraph element to the output div
+          document.getElementById('output').appendChild(paragraph);
+        }, (index + 1) * 3000); // Print each element after 3 seconds
+      });
+    }
+
+    // Call the printWithDelay function when the page loads
+    printWithDelay();
+  </script>
+</body>
+</html>
